@@ -1,5 +1,6 @@
 # Base Image
 FROM spark-base:latest
+FROM quay.io/astronomer/ap-airflow:2.2.0-buster-onbuild
 LABEL maintainer="MarcLamberti"
 
 # Arguments that can be set with docker build
@@ -33,7 +34,8 @@ RUN apt-get update -y && \
     gcc \
     vim \
     netcat \
-    && apt-get autoremove -yqq --purge && apt-get clean
+    && apt-get autoremove -yqq --purge && apt-get clean \
+    apt-get install 
 
 # Upgrade pip
 # Create airflow user 

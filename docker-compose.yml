@@ -27,7 +27,6 @@ services:
       timeout: 45s
       interval: 10s
       retries: 10
-
   adminer:
     image: wodby/adminer:latest
     restart: always
